@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :nickname, presence: true, uniqueness: true, length: { minimum: 5 }
+  has_many :sessions, dependent: :destroy
+  has_many :games, through: :sessions
 end
