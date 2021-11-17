@@ -15,4 +15,4 @@
  */
 
 /* ! CSS PARTIALS */
-@import "components/index";
+@import "./components/_index.scss";
