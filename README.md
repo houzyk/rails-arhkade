@@ -1,3 +1,3 @@
 # Arhkade
 
-## An Open-source Rails app for publishing in-browser *Vanilla JS* games.
+## Open-source platform for publishing in-browser *Vanilla JS* games.
