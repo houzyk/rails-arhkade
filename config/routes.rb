@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'twothousandfourtyeight', to: 'games#twothousandfourtyeight'
   get 'minesweeper', to: 'games#minesweeper'
   get 'breakout', to: 'games#breakout'
-  get 'rubix', to: 'gamesrubix'
+  get 'rubix', to: 'games#rubix'
 end
