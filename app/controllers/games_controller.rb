@@ -3,7 +3,17 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
-  def show
-    @game = Game.find(params[:id])
-  end
+  def tictactoe; end
+
+  def checkers; end
+
+  def snake; end
+
+  def twothousandfourtyeight; end
+
+  def minesweeper; end
+
+  def breakout; end
+
+  def rubix; end
 end
