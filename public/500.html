@@ -61,9 +61,14 @@
 <body class="body">
     <div class="container">
       <div class="space"></div>
-      <p>
-        You Seem Lost
-      </p>
+      <div class="text">
+        <h2>
+          Something's wrong... &#128533
+        </h2>
+        <p>
+          Click <a href="/">here</a> to teleport back in the game!
+        </p>
+      </div>
     </div>
     <script>
       for (let index = 0; index < 100; index++) {
@@ -90,10 +95,10 @@
       }
 
       setInterval(() => {
-        randomPoint(500, "#00798C");
         for (let index = 0; index < (Math.round(Math.random() * 19) + 6); index++) {
           randomPoint("", "#EAEAEA");
         }
+        randomPoint(500, "#00798C");
       }, 1500);
     </script>
 </body>
