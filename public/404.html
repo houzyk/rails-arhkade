@@ -6,12 +6,21 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@900&display=swap');
 
-    body {
+    .body {
     margin: 0;
     padding: 0;
     background-color: #191919;
     font-family: 'Roboto', sans-serif;
-    color: #191919;
+    color: #EAEAEA;
+    }
+
+    a {
+      text-decoration: none;
+      color: #FF9F1C;
+    }
+
+    .text{
+      text-align: center;
     }
 
     .container {
@@ -20,6 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     }
 
     .space {
@@ -48,9 +58,17 @@
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="body">
   <div class="container">
     <div class="space"></div>
+    <div class="text">
+      <h2>
+        You seem lost &#128517
+      </h2>
+      <p>
+        Click <a href="/">here</a> to teleport back in the game!
+      </p>
+    </div>
   </div>
   <script>
     for (let index = 0; index < 100; index++) {
