@@ -4,64 +4,105 @@
   <title>The change you wanted was rejected (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@900&display=swap');
+
+    .body {
     margin: 0;
-  }
+    padding: 0;
+    background-color: #191919;
+    font-family: 'Roboto', sans-serif;
+    color: #EAEAEA;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    a {
+      text-decoration: none;
+      color: #FF9F1C;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .text{
+      text-align: center;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .space {
+    height: 70vh;
+    width: 70vh;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    }
+
+    .grid {
+    cursor: pointer;
+    }
+
+    .point {
+    margin: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #FF9F1C;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    }
+
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+<body class="body">
+  <div class="container">
+    <div class="space"></div>
+    <div class="text">
+      <h2>
+        The change you wanted was rejected &#128556
+      </h2>
+      <p>
+        Maybe you tried to change something you didn't have access to.
+      </p>
+      <p>
+        Click <a href="/">here</a> to teleport back in the game!
+      </p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
+  <script>
+    for (let index = 0; index < 100; index++) {
+      const html = `<div class="grid"></div>`;
+      document.querySelector('.space').insertAdjacentHTML('beforeend', html);
+    }
+
+    const grids = document.querySelectorAll('.grid');
+    grids.forEach((grid) => {
+      grid.innerHTML = `<div class="point"></div>`;
+    });
+
+    const randomPoint = (number, backgroundColor) => {
+      const randomPosition = Math.round(Math.random() * 99)
+      grids[randomPosition].firstChild.style.transform = "scale(1.4)";
+      grids[randomPosition].firstChild.style.backgroundColor = backgroundColor;
+      grids[randomPosition].firstChild.style.color = "#EAEAEA";
+      grids[randomPosition].firstChild.innerHTML = number;
+      setTimeout(() => {
+        grids[randomPosition].firstChild.style.transform = "scale(1)";
+        grids[randomPosition].firstChild.style.backgroundColor = "#FF9F1C";
+        grids[randomPosition].firstChild.innerText = "";
+      }, 750);
+    }
+
+    setInterval(() => {
+      for (let index = 0; index < (Math.round(Math.random() * 19) + 6); index++) {
+        randomPoint("", "#EAEAEA");
+      }
+      randomPoint(422, "#00798C");
+    }, 1500);
+  </script>
 </body>
 </html>
