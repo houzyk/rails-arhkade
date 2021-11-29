@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true, length: { minimum: 5 }
   has_many :sessions, dependent: :destroy
   has_many :games, through: :sessions
+  has_one_attached :photo
 end
