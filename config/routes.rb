@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :games, only: %i[index] do
     resources :sessions, only: %i[index create]
   end
+  get 'tictactoe', to: 'games#tictactoe'
 end
