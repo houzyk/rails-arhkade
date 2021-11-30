@@ -12,7 +12,6 @@
   width: 80vh;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  background-color: aliceblue;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
@@ -20,4 +19,39 @@
     height: 99vh;
     width: 99vh;
   }
+}
+
+.grid-checkers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.grid-checkers-b {
+  background-color: #191919;
+}
+
+.grid-checkers-w {
+  background-color: #EFE9F4;
+}
+
+.pawn-checkers {
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pawn-checkers:hover {
+  opacity: 0.8;
+}
+
+.pawn-checkers-1 {
+  background-color: #DC965A;
+}
+
+.pawn-checkers-2 {
+  background-color: #D05353;
 }
