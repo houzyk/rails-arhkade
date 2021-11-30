@@ -9,6 +9,18 @@ const checkersGame = (game) => {
     (start % 2 === 0) ? colourAssign(index) : colourAssign(index - 1);
     game.insertAdjacentHTML('beforeend', `<div class="grid-checkers grid-checkers-${colour}"></div>`);
   }
+  const grids = document.querySelectorAll('.grid-checkers');
+  const pawnAssign = (grid, player) => {
+    grid.innerHTML = `<div class="pawn-checkers pawn-checkers-${player}"></div>`;
+    grid.dataset.status = true;
+    grid.dataset.pawn = player;
+  }
+  grids.forEach((grid, gridPosition) => {
+    if (grid.classList.contains('grid-checkers-b')) {
+      if (gridPosition < 24 ) pawnAssign(grid, 1);
+      if (gridPosition >= 40) pawnAssign(grid, 2);
+    }
+  });
 }
 export default class extends Controller {
   static targets = ["game"]
