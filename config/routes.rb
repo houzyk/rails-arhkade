@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :games, only: %i[index] do
-    resources :sessions, only: %i[index create]
+    resources :sessions, only: %i[index new create]
   end
   get 'tictactoe', to: 'games#tictactoe'
   get 'checkers', to: 'games#checkers'

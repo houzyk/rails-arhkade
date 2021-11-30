@@ -1,21 +1,33 @@
 class GamesController < ApplicationController
   skip_before_action :authenticate_user!
 
-  def index
-    @games = Game.all
+  def index; end
+
+  def tictactoe
+    @game = Game.find_by(title: 'tictactoe')
   end
 
-  def tictactoe; end
+  def checkers
+    @game = Game.find_by(title: 'checkers')
+  end
 
-  def checkers; end
+  def snake
+    @game = Game.find_by(title: 'snake')
+  end
 
-  def snake; end
+  def twothousandfourtyeight
+    @game = Game.find_by(title: 'twothousandfourtyeight')
+  end
 
-  def twothousandfourtyeight; end
+  def minesweeper
+    @game = Game.find_by(title: 'minesweeper')
+  end
 
-  def minesweeper; end
+  def breakout
+    @game = Game.find_by(title: 'breakout')
+  end
 
-  def breakout; end
-
-  def rubix; end
+  def rubix
+    @game = Game.find_by(title: 'rubix')
+  end
 end
